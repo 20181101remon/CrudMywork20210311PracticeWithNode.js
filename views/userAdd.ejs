@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+
+
+
+</head>
+<body>
+    <form name="addform" action="userAdd" method="post" accept-charset="utf-8" >
+    <h1>新增一筆專案資料與其詳細內容</h1>
+    <div>
+        <label>
+            <label>Mywork:</label>
+            <input type="text" name="mywork" placeholder="專案名稱" >
+        </label>
+    </div>
+    <div>
+        <label>Date</label>
+        <input type="date" name="date" >
+    </div>
+    <div>
+        <label>協同人員</label>
+        <input type="text" name="teammember">
+    </div>
+    <div>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+        <input type="button" value="back" onclick="javascript: location.href='/'">
+
+    </div>
+
+    
+    </form>
+    </body>
+</html>
