@@ -14,7 +14,11 @@
     <h1>Work - List</h1>
 
     <input type="submit" value="add" onclick="javascript:location.href='add'">
-
+    <div class="search">
+        <label>Mywork：</label>
+        <input type="text" name="suserid" value="<%=mywork  %>" placeholder="input the userid">
+        <input type="button" name="sSearch" value="Search" onclick="Search();">
+    </div>
     <table class="table table-hover">
         <tr>
             <th>編號</th>
@@ -36,10 +40,34 @@
                 <td>
                     <%= data[i].teammember  %>
                 </td>
+
+                <td>
+                    <input type="button" name="edit" value="Edit" onclick="Edit('<%= data[i].id  %>');">
+                    <input type="button" name="delete" value="Delete" onclick="Delete('<%= data[i].id  %>');" />
+
+                </td>
+                
             </tr>
             <% } %>
     </table>
 
+    <script>
+            function Edit(id){
+                         window.location.href="/userEdit?id="+id;
+            } 
+
+            function Delete(id){
+                var rs = confirm('Confirm to delete?');
+                if(rs){
+                    window.location.href="/userDelete?id="+id;//???
+                }     
+            }
+
+            function Search(){
+                var mywork=document.getElementsByName('suserid')[0].value;
+                window.location.href="/?user="+mywork;;
+            }
+    </script>
 
 </body>
 </html>

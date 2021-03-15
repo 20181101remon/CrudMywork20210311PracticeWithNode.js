@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <form name="editform" action="userEdit" method="post" accept-charset="utf-8">
+        <h1>編輯資料</h1>
+        <input type="hidden" name="id" value="<%=data[0].id  %>" />
+        <div>
+            <label>Mywork:</label>
+            <input type="text" name="mywork"  value="<%=data[0].mywork %>" readonly/>
+        </div>
+        <div>
+            <label>Date</label>
+            <input type="date" name="date"  value="<%=data[0].data  %>" />
+        </div>
+        <div>
+            <label>協同人員</label>
+            <input type="text" name="teammember" value="<%=data[0].teammember %>">
+        </div>
+        <div>
+            <input type='submit' value='Submit'>
+            <input type='reset' value='Reset'>
+            <input type='button' value='Back' onclick="javascript: window.history.back();">
+        </div>
+    </form>
+    
+</body>
+</html>
